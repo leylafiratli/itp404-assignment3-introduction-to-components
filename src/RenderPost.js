@@ -1,10 +1,15 @@
 import React from 'react';
 
+
+function clicked(){
+	console.log('User has clicked');
+}
+
 export default function RenderPost(props){
 	let values = props.values;
 	return(
 		<div className='reddit_post'>
-			<a href={values.data.url} target='_blank'>
+			<a href={values.data.url} target='_blank' onClick ={props.clicked}>
 			{values.data.title}
 			</a>
 			<h3>Author: {values.data.author}</h3>
