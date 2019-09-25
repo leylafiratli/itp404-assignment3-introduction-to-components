@@ -11,13 +11,13 @@ class App extends React.Component{
       values:[],
       loading:false,
       searches:[],
-      clicks: 0,
+      clicks: '',
     }
   }
 
   countClicks = () => {
   let number = this.state.clicks + 1;
-  this.setState({clicks:number});
+  this.setState({clicks: number});
   }
 
   search = async (value) => {
@@ -39,11 +39,11 @@ class App extends React.Component{
          <div>
            <Search onSearch={this.searchingHistory} />
            {this.state.loading ?
-             <div class="container">
-             <div class="item item-1"></div>
-             <div class="item item-2"></div>
-             <div class="item item-3"></div>
-             <div class="item item-4"></div>
+             <div className="container">
+             <div className="item item-1"></div>
+             <div className="item item-2"></div>
+             <div className="item item-3"></div>
+             <div className="item item-4"></div>
             </div> : ''
            }
            {<RenderPostList click={this.clickCount} values={this.state.values} />}
